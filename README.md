@@ -17,3 +17,9 @@ docker run -d \
 --name=zookeeper --net=host --restart=always \
 crossz/zookeeper-cluster-distribulted:latest
 ```
+
+Here:
+- MYID: the id sequence for zookeeper usage
+- SERVERS: the hostnames/ip-address needed for zoo.cfg
+- CLIENTPORT: port number equivalent to exposed port
+- ENVI: environment variables if needed to pass into container from /etc/profile etc.
