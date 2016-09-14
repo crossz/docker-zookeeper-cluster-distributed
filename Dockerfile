@@ -19,6 +19,8 @@ VOLUME /tmp/zookeeper
 
 COPY entrypoint.sh /
 
+EXPOSE 2889 3889
+
 ENTRYPOINT ["/usr/local/bin/dumb-init", "/entrypoint.sh"]
 
 ENV PATH $PATH:/opt/zookeeper/bin
