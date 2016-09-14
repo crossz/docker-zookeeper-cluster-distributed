@@ -12,12 +12,9 @@ clientPort=${CLIENTPORT}
 EOF
 
 
-#clientPort=2181
-
-
 # server.1=...
 if [ -n "$SERVERS" ]; then
-    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
+    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2889:3889\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
 fi
 
 exec "$@"
