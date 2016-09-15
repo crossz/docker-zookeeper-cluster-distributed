@@ -8,5 +8,6 @@ services:
       - ENVI
       - MYID=1
       - SERVERS=localhost,localhost,localhost
+      - CLIENTPORT=2182
     restart: always
     image: crossz/zookeeper-cluster-distributed
