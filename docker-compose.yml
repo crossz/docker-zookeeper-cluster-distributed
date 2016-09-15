@@ -3,11 +3,10 @@ version: '2'
 services:
   zookeeper:
     build: .
-    network_mode: host
+    network_mode: "host"
     environment:
       - ENVI
       - MYID=1
-      - SERVERS=127.0.0.1,192.168.1.7
-      - CLIENTPORT=2181
+      - SERVERS=localhost,localhost,localhost
     restart: always
     image: crossz/zookeeper-cluster-distributed

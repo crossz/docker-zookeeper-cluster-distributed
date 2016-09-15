@@ -8,13 +8,16 @@ tickTime=2000
 initLimit=10
 syncLimit=5
 dataDir=/tmp/zookeeper
-clientPort=${CLIENTPORT}
+clientPort=2181${MYID}
 EOF
 
 
 # server.1=...
 if [ -n "$SERVERS" ]; then
-    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2889:3889\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
+#    printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888:3888\n", NR, $0 }' >> /opt/zookeeper/conf/zoo.cfg
+
+     printf '%s' "$SERVERS" | awk 'BEGIN { RS = "," }; { printf "server.%i=%s:2888%i:3888%i\n", NR, $0, NR, NR }' >> /opt/zookeeper/conf/zoo.cfg
+
 fi
 
 exec "$@"
