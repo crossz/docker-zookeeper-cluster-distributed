@@ -8,6 +8,7 @@ Inspired by https://github.com/mesoscloud/zookeeper.
 - [ ] port forwarding to replace --net=host
 
 ## howto run
+This demo is only available for --net=host mode, if you are sure that you want to use port-forwarding for zookeeper, go to the linked github page to check out the docker-compose method.
 
 ```
 docker run -d \
@@ -25,4 +26,5 @@ Here:
 - ENVI: environment variables if needed to pass into container from /etc/profile etc.
 
 Notes:
-> in order to avoid conflicts with local zookeeper, the default ports of 2888 and 3888 are assigned 2889 and 3889 for this images.
+> - in order to avoid conflicts with local zookeeper, the default ports of 2888 and 3888 are assigned 2889 and 3889 for this images.
+> - more details about parameters, args, environment vavirables, go to the linked github page to check the docker-compose.yml.
