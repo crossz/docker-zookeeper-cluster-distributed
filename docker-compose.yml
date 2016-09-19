@@ -2,12 +2,14 @@ version: '2'
 
 services:
   zookeeper:
-    build: .
-    network_mode: "host"
+    build:
+      context: .
+      args: 
+        - CLIENTPORT=2182
     environment:
-      - ENVI
       - MYID=1
       - SERVERS=localhost,localhost,localhost
       - CLIENTPORT=2182
+    network_mode: "host"
     restart: always
     image: crossz/zookeeper-cluster-distributed

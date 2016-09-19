@@ -1,6 +1,7 @@
 FROM centos:7
 MAINTAINER Cross Zheng
 
+ARG CLIENTPORT=2181
 ARG MIRROR=http://archive.apache.org/dist
 ARG VERSION=3.4.8
 
@@ -22,5 +23,6 @@ COPY entrypoint.sh /
 ENTRYPOINT ["/usr/local/bin/dumb-init", "/entrypoint.sh"]
 
 ENV PATH $PATH:/opt/zookeeper/bin
+EXPOSE $CLIENTPORT
 
 CMD ["zkServer.sh", "start-foreground"]
