@@ -19,6 +19,24 @@ docker run -d \
 crossz/zookeeper-cluster-distribulted:latest
 ```
 
+or docker-compose.yml :
+
+```
+version: '2'
+
+services:
+  zookeeper:
+    #build: .
+    network_mode: host
+    environment:
+      - ENVI
+      - MYID=1
+      - SERVERS=localhost
+      - CLIENTPORT=2182
+    restart: always
+    image: crossz/zookeeper-cluster-distributed
+```
+
 Here:
 - MYID: the id sequence for zookeeper usage
 - SERVERS: the hostnames/ip-address needed for zoo.cfg
